@@ -1,5 +1,8 @@
 # Zotero AI Summarizer
 
+[![zotero target version](https://img.shields.io/badge/Zotero-7-green?style=flat-square&logo=zotero&logoColor=CC2936)](https://www.zotero.org)
+[![Using Zotero Plugin Template](https://img.shields.io/badge/Using-Zotero%20Plugin%20Template-blue?style=flat-square&logo=github)](https://github.com/windingwind/zotero-plugin-template)
+
 [简体中文 | Chinese README](./README-zhCN.md)
 
 A Zotero 7 plugin that generates structured summaries for your selected items using an LLM and saves the result as a child note. It supports rich Markdown-to-HTML rendering (via `marked`) so your bold, lists, headings, code blocks, and tables appear correctly in Zotero notes.
@@ -45,13 +48,6 @@ Zotero → Preferences → Extensions → AI-Summarizer
   - `pref("temperature", 0.2)`
 - Fallback default prompt (if preference is empty) is in `src/modules/aiSummary.ts` (`defaultTpl`)
 
-## Icons
-
-Replace these files with your PNG icons:
-- `addon/content/icons/favicon.png` (96×96)
-- `addon/content/icons/favicon@0.5x.png` (48×48)
-
-Then rebuild and reinstall the XPI.
 
 ## Build from Source
 

@@ -1,5 +1,8 @@
 # Zotero AI Summarizer（中文）
 
+[![zotero target version](https://img.shields.io/badge/Zotero-7-green?style=flat-square&logo=zotero&logoColor=CC2936)](https://www.zotero.org)
+[![Using Zotero Plugin Template](https://img.shields.io/badge/Using-Zotero%20Plugin%20Template-blue?style=flat-square&logo=github)](https://github.com/windingwind/zotero-plugin-template)
+
 [English README](./README.md)
 
 一个适用于 Zotero 7 的插件。它可调用大模型根据提示词为选中文献生成结构化摘要，并将结果作为“子笔记”保存。内置专业 Markdown→HTML 渲染（使用 `marked`），在 Zotero 笔记中正确显示表格、列表、标题、粗体、斜体、代码块等。
@@ -44,13 +47,6 @@
   - `pref("temperature", 0.2)`
 - 当偏好为空时，代码 fallback 默认提示词在 `src/modules/aiSummary.ts` 的 `defaultTpl`
 
-## 更换图标
-
-替换以下文件为你的 PNG 图标：
-- `addon/content/icons/favicon.png`（96×96）
-- `addon/content/icons/favicon@0.5x.png`（48×48）
-
-替换后执行 `npm run build` 并重新安装 XPI。
 
 ## 从源码编译
 
