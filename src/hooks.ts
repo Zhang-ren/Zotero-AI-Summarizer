@@ -30,7 +30,11 @@ async function onMainWindowLoad(win: _ZoteroTypes.MainWindow): Promise<void> {
     closeOnClick: true,
     closeTime: -1,
   })
-    .createLine({ text: getString("startup-begin"), type: "default", progress: 0 })
+    .createLine({
+      text: getString("startup-begin"),
+      type: "default",
+      progress: 0,
+    })
     .show();
 
   await Zotero.Promise.delay(500);
@@ -40,7 +44,10 @@ async function onMainWindowLoad(win: _ZoteroTypes.MainWindow): Promise<void> {
 
   await Zotero.Promise.delay(300);
 
-  popupWin.changeLine({ progress: 100, text: `[100%] ${getString("startup-finish")}` });
+  popupWin.changeLine({
+    progress: 100,
+    text: `[100%] ${getString("startup-finish")}`,
+  });
   popupWin.startCloseTimer(3000);
 }
 

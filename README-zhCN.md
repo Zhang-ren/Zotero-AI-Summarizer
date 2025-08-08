@@ -76,4 +76,4 @@ npm install --cache /tmp/.npm
 
 ## 许可
 
-AGPL-3.0-or-later 
+AGPL-3.0-or-later

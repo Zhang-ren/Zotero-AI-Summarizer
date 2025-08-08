@@ -56,6 +56,7 @@ Zotero → Preferences → Extensions → AI-Summarizer
 ## Icons
 
 Replace these files with your PNG icons:
+
 - `addon/content/icons/favicon.png` (96×96)
 - `addon/content/icons/favicon@0.5x.png` (48×48)
 
@@ -87,6 +88,7 @@ If you encounter permission issues on macOS when running `npm install`, you can 
 ```bash
 npm install --cache /tmp/.npm
 ```
+
 ## Troubleshooting
 
 - No right-click menu? Restart Zotero and ensure the plugin is enabled
@@ -95,4 +97,4 @@ npm install --cache /tmp/.npm
 
 ## License
 
-AGPL-3.0-or-later 
+AGPL-3.0-or-later
