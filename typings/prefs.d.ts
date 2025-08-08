@@ -9,6 +9,12 @@ declare namespace _ZoteroTypes {
     PluginPrefsMap: {
       "enable": boolean;
       "input": string;
+      "apiBase": string;
+      "apiKey": string;
+      "model": string;
+      "temperature": number;
+      "maxChars": number;
+      "prompt": string;
     };
   }
 }

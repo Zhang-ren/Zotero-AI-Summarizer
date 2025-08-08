@@ -1,10 +1,10 @@
 startup-begin = Addon is loading
 startup-finish = Addon is ready
-menuitem-label = Addon Template: Helper Examples
-menupopup-label = Addon Template: Menupopup
-menuitem-submenulabel = Addon Template
-menuitem-filemenulabel = Addon Template: File Menuitem
-prefs-title = Template
+menuitem-label = AI-Summarizer: Helper Examples
+menupopup-label = AI-Summarizer: Menupopup
+menuitem-submenulabel = AI-Summarizer
+menuitem-filemenulabel = AI-Summarizer: File Menuitem
+prefs-title = AI-Summarizer
 prefs-table-title = Title
 prefs-table-detail = Detail
 tabpanel-lib-tab-label = Lib Tab

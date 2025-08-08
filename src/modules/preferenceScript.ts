@@ -1,5 +1,6 @@
 import { config } from "../../package.json";
 import { getString } from "../utils/locale";
+import { AISummaryModule } from "./aiSummary";
 
 export async function registerPrefsScripts(_window: Window) {
   // This function is called when the prefs window is opened
@@ -127,5 +128,21 @@ function bindPrefEvents() {
       addon.data.prefs!.window.alert(
         `Successfully changed to ${(e.target as HTMLInputElement).value}!`,
       );
+    });
+
+  // 绑定“测试 API”按钮
+  addon.data
+    .prefs!.window.document?.querySelector(
+      `#zotero-prefpane-${config.addonRef}-apitest`,
+    )
+    ?.addEventListener("command", async (_e: Event) => {
+      const progress = new ztoolkit.ProgressWindow(config.addonName)
+        .createLine({ text: "测试 API 连接中...", progress: 40 })
+        .show();
+      try {
+        const result = await AISummaryModule.testAPI();
+      } finally {
+        progress.startCloseTimer(1000);
+      }
     });
 }

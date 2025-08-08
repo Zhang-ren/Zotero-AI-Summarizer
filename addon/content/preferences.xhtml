@@ -21,6 +21,33 @@
       preference="input"
     ></html:input>
   </hbox>
+  <separator />
+  <label><html:h3 data-l10n-id="pref-ai-title"></html:h3></label>
+  <hbox>
+    <html:label for="zotero-prefpane-__addonRef__-apiBase" data-l10n-id="pref-api-base"></html:label>
+    <html:input type="text" id="zotero-prefpane-__addonRef__-apiBase" preference="apiBase" style="width: 420px;"></html:input>
+  </hbox>
+  <hbox>
+    <html:label for="zotero-prefpane-__addonRef__-apiKey" data-l10n-id="pref-api-key"></html:label>
+    <html:input type="password" id="zotero-prefpane-__addonRef__-apiKey" preference="apiKey" style="width: 420px;"></html:input>
+  </hbox>
+  <hbox>
+    <html:label for="zotero-prefpane-__addonRef__-model" data-l10n-id="pref-model"></html:label>
+    <html:input type="text" id="zotero-prefpane-__addonRef__-model" preference="model"></html:input>
+    <html:label for="zotero-prefpane-__addonRef__-temperature" data-l10n-id="pref-temperature" style="margin-left:10px;"></html:label>
+    <html:input type="number" step="0.1" min="0" max="2" id="zotero-prefpane-__addonRef__-temperature" preference="temperature" style="width: 80px;"></html:input>
+  </hbox>
+  <hbox>
+    <html:label for="zotero-prefpane-__addonRef__-maxChars" data-l10n-id="pref-max-chars"></html:label>
+    <html:input type="number" min="1000" max="1000000" id="zotero-prefpane-__addonRef__-maxChars" preference="maxChars"></html:input>
+  </hbox>
+  <hbox>
+    <html:label for="zotero-prefpane-__addonRef__-prompt" data-l10n-id="pref-prompt"></html:label>
+    <html:textarea id="zotero-prefpane-__addonRef__-prompt" preference="prompt" rows="6" cols="60"></html:textarea>
+  </hbox>
+  <hbox>
+    <button id="zotero-prefpane-__addonRef__-apitest" data-l10n-id="pref-api-test"></button>
+  </hbox>
   <hbox class="virtualized-table-container" flex="1" height="300px">
     <html:div id="__addonRef__-table-container" />
   </hbox>

@@ -8,6 +8,7 @@ import {
 import { getString, initLocale } from "./utils/locale";
 import { registerPrefsScripts } from "./modules/preferenceScript";
 import { createZToolkit } from "./utils/ztoolkit";
+import { AISummaryModule } from "./modules/aiSummary";
 
 async function onStartup() {
   await Promise.all([
@@ -70,11 +71,10 @@ async function onMainWindowLoad(win: _ZoteroTypes.MainWindow): Promise<void> {
 
   UIExampleFactory.registerStyleSheet(win);
 
-  UIExampleFactory.registerRightClickMenuItem();
+  // 移除模板示例菜单，仅保留 AI 菜单
 
-  UIExampleFactory.registerRightClickMenuPopup(win);
-
-  UIExampleFactory.registerWindowMenuWithSeparator();
+  // 注册 AI 总结菜单
+  AISummaryModule.registerContextMenu();
 
   PromptExampleFactory.registerNormalCommandExample();
 
@@ -90,7 +90,10 @@ async function onMainWindowLoad(win: _ZoteroTypes.MainWindow): Promise<void> {
   });
   popupWin.startCloseTimer(5000);
 
-  addon.hooks.onDialogEvents("dialogExample");
+  // 仅在开发环境显示示例对话框，避免正式版每次启动都弹窗
+  if (addon.data.env === "development") {
+    addon.hooks.onDialogEvents("dialogExample");
+  }
 }
 
 async function onMainWindowUnload(win: Window): Promise<void> {

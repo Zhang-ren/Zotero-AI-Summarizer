@@ -1,24 +1,24 @@
 {
-  "name": "zotero-plugin-template",
+  "name": "zotero-ai-summarizer",
   "type": "module",
-  "version": "3.1.0",
-  "description": "Zotero Plugin Template",
+  "version": "0.1.0",
+  "description": "AI summarizer for Zotero items",
   "config": {
-    "addonName": "Zotero Plugin Template",
-    "addonID": "addontemplate@euclpts.com",
-    "addonRef": "addontemplate",
-    "addonInstance": "AddonTemplate",
-    "prefsPrefix": "extensions.zotero.addontemplate"
+    "addonName": "Zotero AI Summarizer",
+    "addonID": "zotero-ai-summarizer@local",
+    "addonRef": "zoteroaisummarizer",
+    "addonInstance": "ZoteroAISummarizer",
+    "prefsPrefix": "extensions.zotero.zoteroaisummarizer"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/windingwind/zotero-plugin-template.git"
+    "url": "git+https://github.com/your/repo.git"
   },
-  "author": "windingwind",
+  "author": "you",
   "bugs": {
-    "url": "https://github.com/windingwind/zotero-plugin-template/issues"
+    "url": "https://github.com/your/repo/issues"
   },
-  "homepage": "https://github.com/windingwind/zotero-plugin-template#readme",
+  "homepage": "https://github.com/your/repo#readme",
   "license": "AGPL-3.0-or-later",
   "scripts": {
     "start": "zotero-plugin serve",
@@ -30,6 +30,7 @@
     "update-deps": "npm update --save"
   },
   "dependencies": {
+    "marked": "^12.0.2",
     "zotero-plugin-toolkit": "^5.1.0-beta.4"
   },
   "devDependencies": {
