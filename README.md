@@ -79,35 +79,6 @@ If you encounter permission issues on macOS when running `npm install`, you can 
 ```bash
 npm install --cache /tmp/.npm
 ```
-
-## Release to GitHub
-
-Two options:
-
-### A) Manual GitHub Release
-
-1. Commit your code and push to GitHub:
-   ```bash
-   git init
-   git add .
-   git commit -m "feat: initial release"
-   git branch -M main
-   git remote add origin git@github.com:<your>/<repo>.git
-   git push -u origin main
-   ```
-2. Build XPI:
-   ```bash
-   npm run build
-   ```
-3. On GitHub → Releases → Draft a new release
-   - Tag e.g. `v0.1.0` (match `package.json` version)
-   - Upload `.scaffold/build/zotero-ai-summarizer.xpi`
-   - Publish the release
-
-### B) Using `zotero-plugin` Tooling (Optional)
-
-This template ships with `zotero-plugin` scripts. You can integrate CI and auto-release (see the tool repo for details). For most users, manual releases (option A) are simpler.
-
 ## Troubleshooting
 
 - No right-click menu? Restart Zotero and ensure the plugin is enabled

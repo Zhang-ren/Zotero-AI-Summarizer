@@ -78,35 +78,6 @@ npm run build
 ```bash
 npm install --cache /tmp/.npm
 ```
-
-## 发布到 GitHub
-
-两种方式：
-
-### A）手动发布 Release（推荐简单）
-
-1. 推送代码：
-   ```bash
-   git init
-   git add .
-   git commit -m "feat: initial release"
-   git branch -M main
-   git remote add origin git@github.com:<your>/<repo>.git
-   git push -u origin main
-   ```
-2. 构建 XPI：
-   ```bash
-   npm run build
-   ```
-3. 打开 GitHub → Releases → Draft a new release
-   - Tag 如 `v0.1.0`（与 `package.json` 版本一致）
-   - 上传 `.scaffold/build/zotero-ai-summarizer.xpi`
-   - 发布
-
-### B）使用 `zotero-plugin` 工具链（可选）
-
-模板内置了 `zotero-plugin` 相关脚本，可按需配置 CI/CD 自动发布。普通用户使用手动发布更直接。
-
 ## 常见问题
 
 - 右键菜单没有显示？重启 Zotero 并确认插件已启用
