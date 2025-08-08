@@ -7,6 +7,8 @@
 
 A Zotero 7 plugin that generates structured summaries for your selected items using an LLM and saves the result as a child note. It supports rich Markdown-to-HTML rendering (via `marked`) so your bold, lists, headings, code blocks, and tables appear correctly in Zotero notes.
 
+![Result preview](./img/Attention-Is-All-You-Need.png)
+
 ## Features
 
 - AI summarization to child notes (right-click → "AI Summarize to Child Note")
@@ -14,6 +16,7 @@ A Zotero 7 plugin that generates structured summaries for your selected items us
 - Built-in "Test API" button in preferences to quickly verify connectivity
 - Markdown-to-HTML rendering for notes (tables, lists, headings, links, code blocks, inline code)
 - Multi-item support: run on multiple selected regular items
+- Batch processing friendly: select hundreds/thousands of items and run; with a local LLM endpoint you can keep Zotero running overnight and get summaries for your entire library
 - Simple, privacy-first: your API endpoint is user-configured
 
 ## Install
@@ -32,6 +35,8 @@ A Zotero 7 plugin that generates structured summaries for your selected items us
 
 Zotero → Preferences → Extensions → AI-Summarizer
 
+![Settings](./img/Setting.png)
+
 - API Base: your OpenAI-compatible Chat Completions endpoint (e.g. https://api.openai.com/v1)
 - API Key: your key
 - Model: e.g. `gpt-4o-mini` (or your server-side model)
@@ -48,6 +53,13 @@ Zotero → Preferences → Extensions → AI-Summarizer
   - `pref("temperature", 0.2)`
 - Fallback default prompt (if preference is empty) is in `src/modules/aiSummary.ts` (`defaultTpl`)
 
+## Icons
+
+Replace these files with your PNG icons:
+- `addon/content/icons/favicon.png` (96×96)
+- `addon/content/icons/favicon@0.5x.png` (48×48)
+
+Then rebuild and reinstall the XPI.
 
 ## Build from Source
 

@@ -1,7 +1,4 @@
-pref-title = Addon Template Example
-pref-enable =
-    .label = Enable
-pref-input = Input
+pref-title = AI-Summarizer Settings
 pref-help = { $name } Build { $version } { $time }
 pref-ai-title = AI Summary Settings
 pref-api-base = API Base

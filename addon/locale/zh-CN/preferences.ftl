@@ -1,8 +1,4 @@
-pref-title = 插件模板设置示例
-pref-enable =
-    .label = 开启
-pref-input = 输入
-pref-help = { $name } Build { $version } { $time }
+pref-title = AI-Summarizer 设置
 pref-ai-title = AI 总结设置
 pref-api-base = API Base
 pref-api-key = API Key
@@ -11,3 +7,4 @@ pref-temperature = 温度
 pref-max-chars = 截取最大字符数
 pref-prompt = 提示词模板
 pref-api-test = 测试 API 连接
+pref-help = { $name } Build { $version } { $time }

@@ -1,5 +1,3 @@
-pref("enable", true);
-pref("input", "This is input");
 pref("apiBase", "https://api.openai.com/v1");
 pref("apiKey", "");
 pref("model", "gpt-4o-mini");

@@ -7,6 +7,8 @@
 
 一个适用于 Zotero 7 的插件。它可调用大模型根据提示词为选中文献生成结构化摘要，并将结果作为“子笔记”保存。内置专业 Markdown→HTML 渲染（使用 `marked`），在 Zotero 笔记中正确显示表格、列表、标题、粗体、斜体、代码块等。
 
+![效果预览](./img/Attention-Is-All-You-Need.png)
+
 ## 功能
 
 - 右键一键“生成 AI 摘要到子笔记”
@@ -14,6 +16,7 @@
 - 偏好面板提供“测试 API”按钮，快速验证连通性
 - Markdown→HTML 渲染，完美呈现常见格式
 - 支持多选条目批量处理
+- 最大优势：支持“批量处理”。若对接本地模型（如本地 OpenAI 兼容端点），可在夜间挂机运行，一晚上即可为整库论文生成摘要
 
 ## 安装
 
@@ -31,6 +34,8 @@
 
 路径：Zotero → 首选项 → 扩展 → “AI-Summarizer”
 
+![设置](./img/Setting.png)
+
 - API Base：OpenAI 兼容 Chat Completions 接口（例如 `https://api.openai.com/v1`）
 - API Key：你的密钥
 - 模型：例如 `gpt-4o-mini`（或你的服务端模型名）
@@ -47,26 +52,14 @@
   - `pref("temperature", 0.2)`
 - 当偏好为空时，代码 fallback 默认提示词在 `src/modules/aiSummary.ts` 的 `defaultTpl`
 
-
 ## 从源码编译
 
 前置：Node.js（LTS）、Git、Zotero 7
 
 ```bash
-# 安装依赖
 npm install
-
-# 开发热重载
-npm start
-
-# 生产构建（生成 XPI 到 .scaffold/build）
-npm run build
-```
-
-生成的 XPI 路径：
-
-```
-.scaffold/build/zotero-ai-summarizer.xpi
+npm start      # 开发热重载
+npm run build  # 生成 .scaffold/build/zotero-ai-summarizer.xpi
 ```
 
 若在 macOS 上 `npm install` 出现权限问题，可用临时缓存：
@@ -74,11 +67,12 @@ npm run build
 ```bash
 npm install --cache /tmp/.npm
 ```
-## 常见问题
 
-- 右键菜单没有显示？重启 Zotero 并确认插件已启用
-- 模型调用失败？检查 API Base/Key/Model，并用“测试 API”按钮验证
-- 名称/图标没更新？先卸载旧版本，再安装新 XPI
+## 发布到 GitHub
+
+1. 推送代码到 GitHub
+2. `npm run build`
+3. GitHub → Releases → Draft a new release → 上传 `.scaffold/build/zotero-ai-summarizer.xpi`
 
 ## 许可
 
