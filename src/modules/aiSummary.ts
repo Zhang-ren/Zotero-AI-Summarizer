@@ -56,7 +56,8 @@ async function collectItemContext(item: Zotero.Item): Promise<{
 }
 
 async function callChatCompletion(prompt: string): Promise<string> {
-  const base = (getPref("apiBase" as any) as string) || "https://api.openai.com/v1";
+  const base =
+    (getPref("apiBase" as any) as string) || "https://api.openai.com/v1";
   const apiKey = (getPref("apiKey" as any) as string) || "";
   const model = (getPref("model" as any) as string) || "gpt-4o-mini";
   const temperature = Number(getPref("temperature" as any) ?? 0.2);
@@ -76,7 +77,10 @@ async function callChatCompletion(prompt: string): Promise<string> {
     body: JSON.stringify({
       model,
       messages: [
-        { role: "system", content: "你是学术助手，请用中文输出，结构清晰，重点明确。" },
+        {
+          role: "system",
+          content: "你是学术助手，请用中文输出，结构清晰，重点明确。",
+        },
         { role: "user", content: prompt },
       ],
       temperature,
@@ -88,7 +92,12 @@ async function callChatCompletion(prompt: string): Promise<string> {
     throw new Error(`调用模型失败: ${res.status} ${res.statusText} - ${text}`);
   }
   const data: any = await res.json();
-  const content = data && data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content;
+  const content =
+    data &&
+    data.choices &&
+    data.choices[0] &&
+    data.choices[0].message &&
+    data.choices[0].message.content;
   return String(content || "").trim();
 }
 
@@ -96,7 +105,10 @@ function replaceAll(str: string, search: string, replacement: string): string {
   return str.split(search).join(replacement);
 }
 
-function buildPrompt(tpl: string, data: { title: string; abstractNote: string; content: string }): string {
+function buildPrompt(
+  tpl: string,
+  data: { title: string; abstractNote: string; content: string },
+): string {
   let out = tpl;
   out = replaceAll(out, "{title}", data.title || "");
   out = replaceAll(out, "{abstract}", data.abstractNote || "");
@@ -167,9 +179,13 @@ export class AISummaryModule {
 
   static async summarizeSelected() {
     const pane = ztoolkit.getGlobal("ZoteroPane");
-    const items = (pane.getSelectedItems() as Zotero.Item[]).filter((it) => it.isRegularItem());
+    const items = (pane.getSelectedItems() as Zotero.Item[]).filter((it) =>
+      it.isRegularItem(),
+    );
     if (!items.length) {
-      ztoolkit.getGlobal("alert")("请先在中间列表选择至少一个条目（非笔记/非附件）。");
+      ztoolkit.getGlobal("alert")(
+        "请先在中间列表选择至少一个条目（非笔记/非附件）。",
+      );
       return;
     }
 
@@ -178,7 +194,10 @@ export class AISummaryModule {
         await summarizeItemToChildNote(item);
       } catch (e: any) {
         new ztoolkit.ProgressWindow(addon.data.config.addonName)
-          .createLine({ text: `条目失败：${item.getDisplayTitle()} - ${e?.message || e}`, type: "error" })
+          .createLine({
+            text: `条目失败：${item.getDisplayTitle()} - ${e?.message || e}`,
+            type: "error",
+          })
           .show();
       }
     }
@@ -188,4 +207,4 @@ export class AISummaryModule {
     const result = await testAPIConnectivity();
     ztoolkit.getGlobal("alert")(result);
   }
-} 
+}
