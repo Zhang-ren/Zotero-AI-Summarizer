@@ -4,7 +4,7 @@
 
 ## 系统要求
 
-- **Node.js**: 版本 >= 18.0.0（推荐使用 LTS 版本，当前测试版本: v20.19.6）
+- **Node.js**: 版本 >= 18.0.0（推荐使用最新的 LTS 版本）
 - **npm**: 版本 >= 9.0.0（随 Node.js 一起安装）
 - **Git**: 用于克隆仓库
 - **Zotero**: 版本 7.x（用于测试安装）
@@ -52,13 +52,12 @@ npm run build
 .scaffold/build/zotero-ai-summarizer.xpi
 ```
 
-文件大小约为 65KB。
-
 ### 5. 验证构建（可选）
 
 运行验证脚本来确认构建是否成功：
 
 ```bash
+chmod +x verify-build.sh  # 首次使用时需要添加执行权限
 ./verify-build.sh
 ```
 

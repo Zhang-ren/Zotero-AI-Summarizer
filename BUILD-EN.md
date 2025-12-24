@@ -4,7 +4,7 @@ This document provides detailed instructions on how to compile Zotero AI Summari
 
 ## System Requirements
 
-- **Node.js**: Version >= 18.0.0 (LTS recommended, tested with v20.19.6)
+- **Node.js**: Version >= 18.0.0 (latest LTS version recommended)
 - **npm**: Version >= 9.0.0 (comes with Node.js)
 - **Git**: For cloning the repository
 - **Zotero**: Version 7.x (for testing the installation)
@@ -52,13 +52,12 @@ After building, the XPI file will be generated at:
 .scaffold/build/zotero-ai-summarizer.xpi
 ```
 
-The file size is approximately 65KB.
-
 ### 5. Verify Build (Optional)
 
 Run the verification script to confirm the build succeeded:
 
 ```bash
+chmod +x verify-build.sh  # First time only: add execute permission
 ./verify-build.sh
 ```
 
