@@ -25,6 +25,7 @@ npm install
 ```
 
 **注意事项：**
+
 - 如果在 macOS 上遇到权限问题，可以使用临时缓存：
   ```bash
   npm install --cache /tmp/.npm
@@ -52,6 +53,21 @@ npm run build
 ```
 
 文件大小约为 65KB。
+
+### 5. 验证构建（可选）
+
+运行验证脚本来确认构建是否成功：
+
+```bash
+./verify-build.sh
+```
+
+此脚本会检查：
+
+- Node.js 和 npm 版本
+- 依赖是否已安装
+- XPI 文件是否存在且完整
+- XPI 文件内容是否包含必需文件
 
 ## 安装到 Zotero
 
@@ -82,6 +98,7 @@ npm start
 ```
 
 此命令会：
+
 - 自动监控源代码变化
 - 实时重新编译
 - 自动重新加载插件（需要 Zotero 配合）
@@ -162,6 +179,7 @@ pref("maxChars", 800000);
 ### 问题：npm install 失败
 
 **解决方案：**
+
 1. 确保 Node.js 版本正确：`node --version`
 2. 清除 npm 缓存：`npm cache clean --force`
 3. 删除 `node_modules` 和 `package-lock.json`，重新安装：
@@ -173,6 +191,7 @@ pref("maxChars", 800000);
 ### 问题：编译时出现 TypeScript 错误
 
 **解决方案：**
+
 1. 确保所有依赖已正确安装
 2. 检查 TypeScript 版本：`npx tsc --version`
 3. 运行 `npm run lint:fix` 自动修复格式问题
@@ -180,6 +199,7 @@ pref("maxChars", 800000);
 ### 问题：生成的 XPI 文件无法安装
 
 **解决方案：**
+
 1. 确认 Zotero 版本为 7.x
 2. 检查 XPI 文件是否损坏：
    ```bash
@@ -194,6 +214,7 @@ pref("maxChars", 800000);
 ### 问题：编译警告 "Pref key 'temperature' is a number..."
 
 **说明：** 这是一个非关键警告，不影响插件功能。如果需要消除警告，可以：
+
 1. 将 `temperature` 的类型改为字符串
 2. 或者接受此警告（推荐，因为浮点数类型更符合语义）
 
@@ -202,6 +223,7 @@ pref("maxChars", 800000);
 **说明：** 这表示 `zotero-plugin-scaffold` 要求 Node.js >= 22.8.0，但当前版本较低。这不会阻止编译，项目在 Node.js 18+ 上可以正常工作。
 
 **可选解决方案：**
+
 - 升级到 Node.js 22+ 以消除警告
 - 或者忽略此警告继续使用当前版本
 
@@ -210,16 +232,19 @@ pref("maxChars", 800000);
 ### 创建 Release
 
 1. 更新版本号（`package.json`）：
+
    ```bash
    npm version patch  # 或 minor/major
    ```
 
 2. 编译项目：
+
    ```bash
    npm run build
    ```
 
 3. 提交并推送：
+
    ```bash
    git add .
    git commit -m "Release v0.1.x"

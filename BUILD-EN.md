@@ -25,6 +25,7 @@ npm install
 ```
 
 **Notes:**
+
 - If you encounter permission issues on macOS, use a temporary cache:
   ```bash
   npm install --cache /tmp/.npm
@@ -52,6 +53,21 @@ After building, the XPI file will be generated at:
 ```
 
 The file size is approximately 65KB.
+
+### 5. Verify Build (Optional)
+
+Run the verification script to confirm the build succeeded:
+
+```bash
+./verify-build.sh
+```
+
+This script checks:
+
+- Node.js and npm versions
+- Whether dependencies are installed
+- Whether the XPI file exists and is intact
+- Whether the XPI file contains required files
 
 ## Installing in Zotero
 
@@ -82,6 +98,7 @@ npm start
 ```
 
 This command will:
+
 - Monitor source code changes
 - Automatically recompile
 - Auto-reload the plugin (requires Zotero configuration)
@@ -162,6 +179,7 @@ pref("maxChars", 800000);
 ### Issue: npm install fails
 
 **Solution:**
+
 1. Verify Node.js version: `node --version`
 2. Clear npm cache: `npm cache clean --force`
 3. Remove `node_modules` and `package-lock.json`, then reinstall:
@@ -173,6 +191,7 @@ pref("maxChars", 800000);
 ### Issue: TypeScript errors during compilation
 
 **Solution:**
+
 1. Ensure all dependencies are correctly installed
 2. Check TypeScript version: `npx tsc --version`
 3. Run `npm run lint:fix` to auto-fix formatting issues
@@ -180,6 +199,7 @@ pref("maxChars", 800000);
 ### Issue: Generated XPI file cannot be installed
 
 **Solution:**
+
 1. Confirm Zotero version is 7.x
 2. Check if XPI file is corrupted:
    ```bash
@@ -194,6 +214,7 @@ pref("maxChars", 800000);
 ### Issue: Build warning "Pref key 'temperature' is a number..."
 
 **Explanation:** This is a non-critical warning that doesn't affect plugin functionality. To eliminate it:
+
 1. Change `temperature` type to string
 2. Or accept the warning (recommended, as float type is more semantically correct)
 
@@ -202,6 +223,7 @@ pref("maxChars", 800000);
 **Explanation:** This indicates `zotero-plugin-scaffold` requires Node.js >= 22.8.0, but the current version is lower. This won't prevent compilation; the project works fine with Node.js 18+.
 
 **Optional solutions:**
+
 - Upgrade to Node.js 22+ to eliminate the warning
 - Or ignore the warning and continue with the current version
 
@@ -210,16 +232,19 @@ pref("maxChars", 800000);
 ### Creating a Release
 
 1. Update version number in `package.json`:
+
    ```bash
    npm version patch  # or minor/major
    ```
 
 2. Build the project:
+
    ```bash
    npm run build
    ```
 
 3. Commit and push:
+
    ```bash
    git add .
    git commit -m "Release v0.1.x"
