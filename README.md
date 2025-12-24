@@ -89,6 +89,8 @@ If you encounter permission issues on macOS when running `npm install`, you can 
 npm install --cache /tmp/.npm
 ```
 
+**Detailed Build Guide**: See [BUILD-EN.md](./BUILD-EN.md) for comprehensive build instructions, troubleshooting, and release workflow.
+
 ## Troubleshooting
 
 - No right-click menu? Restart Zotero and ensure the plugin is enabled
