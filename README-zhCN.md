@@ -68,6 +68,8 @@ npm run build  # 生成 .scaffold/build/zotero-ai-summarizer.xpi
 npm install --cache /tmp/.npm
 ```
 
+**详细的编译和安装指南**：请参阅 [BUILD.md](./BUILD.md) 获取完整的编译说明、故障排查和发布流程。
+
 ## 发布到 GitHub
 
 1. 推送代码到 GitHub
